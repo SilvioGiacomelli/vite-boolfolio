@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-import { store } from './data/store'; // Importa lo store
+import { store } from './data/store'; 
 import ProjectCard from './components/ProjectCard.vue';
 
 export default {
@@ -37,6 +37,7 @@ export default {
     <div class="row">
       <div class="col-md-12" v-for="project in projects" :key="project.id">
         <ProjectCard :project="project"/>
+        
       </div>
     </div>
   </div>

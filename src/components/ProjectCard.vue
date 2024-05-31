@@ -1,5 +1,5 @@
 <template>
-  <div class="project-card">
+  <div class="project-card card">
     <h2>{{ project.title }}</h2>
   </div>
 </template>
