@@ -15,8 +15,10 @@ export default {
 </script>
 
 <template>
-  <div>
-    <ProjectCard v-for="project in store.projects" :key="project.id" :project="project"/>
+  <div class="container">
+    <div class="row row-cols-3">
+          <ProjectCard v-for="project in store.projects" :key="project.id" :project="project"/>
+    </div>
   </div>
 </template>
 
