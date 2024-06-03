@@ -40,7 +40,12 @@ header {
     margin: 0 10px;
     a{
       color: white;
-      text-decoration: none;}
+      text-decoration: none;
+      &.active{
+        font-weight: bold;
+        color: yellow;
+      }
+    }
   }
 }
 }
