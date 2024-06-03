@@ -13,7 +13,7 @@ export default {
       <h2>Header</h2>
       <ul>
         <li><router-link :to="{name:'home'}">Home</router-link></li>
-        <li><router-link :to="{name:'blog'}">Blog</router-link></li>
+        <li><router-link :to="{name:'projects'}">Projects</router-link></li>
         <li><router-link :to="{name:'about'}">About</router-link></li>
         <li><router-link :to="{name:'contacts'}">Contact</router-link></li>
       </ul>
