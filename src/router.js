@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from './pages/Home.vue';
-import Blog from './pages/Blog';
-import Contacts from './pages/Contacts';
-import About from './pages/About';
-import Errore404 from './pages/Errore404';
+import Blog from './pages/Blog.vue';
+import Contacts from './pages/Contacts.vue';
+import About from './pages/About.vue';
+import Error404 from './pages/Error404.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -30,8 +30,8 @@ const router = createRouter({
     },
     {
       path: '/:pathMatch(.*)*',
-      name: 'errore404',
-      component: Errore404
+      name: 'error404',
+      component: Error404
     }
   ]
 })
