@@ -1,23 +1,27 @@
 <script>
 import axios from 'axios';
 import { store } from './data/store'; 
-import ProjectCard from './components/ProjectCard.vue';
+import Main from './components/Main.vue';
+import Header from './components/partials/Header.vue';
+import Footer from './components/partials/Footer.vue';
 
 export default {
-  name: 'App',
   components: {
-    ProjectCard
+    Main,
+    Header,
+    Footer
   },
   data() {
     return {
-      projects: []
+      store,
     };
   },
   methods: {
     getApi() {
       axios.get(store.apiUrl) 
+
         .then(result => {
-          this.projects = result.data;
+          this.store.projects = result.data;
           console.log(result.data);
         })
         .catch(error => {
@@ -32,15 +36,9 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <h1>App</h1>
-    <div class="row">
-      <div class="col-md-12" v-for="project in projects" :key="project.id">
-        <ProjectCard :project="project"/>
-        
-      </div>
-    </div>
-  </div>
+  <Header/>
+  <Main/>
+  <Footer/>
 </template>
 
 <style lang="scss" scoped>
