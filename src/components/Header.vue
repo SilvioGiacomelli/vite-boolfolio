@@ -12,10 +12,10 @@ export default {
     <nav>
       <h2>Header</h2>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contacts">Contact</a></li>
+        <li><router-link :to="{name:'home'}">Home</router-link></li>
+        <li><router-link :to="{name:'blog'}">Blog</router-link></li>
+        <li><router-link :to="{name:'about'}">About</router-link></li>
+        <li><router-link :to="{name:'contacts'}">Contact</router-link></li>
       </ul>
     </nav>
 

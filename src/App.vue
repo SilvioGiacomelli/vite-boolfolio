@@ -22,7 +22,7 @@ mounted() {
 
 <template>
   <div class="main-wrapper">
-<div class="container">
+<div class="container-fluid header-nav">
   <Header/> 
 </div>
 <div class="container">
