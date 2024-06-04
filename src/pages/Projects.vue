@@ -18,13 +18,13 @@ export default {
   },
   //Il methods serve per fare la chiamata all'api
   methods: {
-    getApi(apiUrl, chiusuraUrl = "") {
-      axios.get(store.apiUrl + chiusuraUrl) 
+    getApi(apiUrl, urlTail = "") {
+      axios.get(store.apiUrl + urlTail) 
 
         .then(result => {
           this.loading = false
 
-          switch (chiusuraUrl) {
+          switch (urlTail) {
             case 'projects':
               this.store.projects = result.data;
               console.log(result.data);
@@ -56,6 +56,12 @@ name: 'Projects',
 
 <template>
 <Loader v-if="loading" />
+<div class="technologies_tab">
+  <span v-for="type in store.types" :key="`t-${type.id}`" class="badge bg-black">{{ type.title }}</span>
+</div>
+<div class="types_tab">
+  <span v-for="technology in store.technologies" :key="`t-${technology.id}`" class="badge bg-warning text-black">{{ technology.title }}</span>
+</div>
 <Main v-if="!loading" />
 </template>
 
