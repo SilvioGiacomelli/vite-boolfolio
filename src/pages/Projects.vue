@@ -12,17 +12,32 @@ export default {
   data() {
     return {
       store,
-      loading:true
+      loading:true,
+      projects: [],
+  technologies: [],
+  types: [],
     };
   },
+  //Il methods serve per fare la chiamata all'api
   methods: {
-    getApi() {
-      axios.get(store.apiUrl + 'projects') 
+    getApi(apiUrl, chiusuraUrl = "") {
+      axios.get(store.apiUrl + chiusuraUrl) 
 
         .then(result => {
-          this.store.projects = result.data;
-          console.log(result.data);
           this.loading = false
+
+          switch (chiusuraUrl) {
+            case 'projects':
+              this.store.projects = result.data;
+              console.log(result.data);
+              break;
+            case 'types':
+              this.store.types = result.data;
+              break;
+            case 'technologies':
+              this.store.technologies = result.data;
+              break;
+            }
         })
         .catch(error => {
           console.log(error.message);
@@ -30,8 +45,12 @@ export default {
         });
     }
   },
+
+  //il metodo mounted serve per fare in modo che la chiamata all'api venga fatta solo una volta
   mounted() {
-    this.getApi();
+    this.getApi(store.apiUrl + 'projects');
+    this.getApi(store.apiUrl + 'types');
+    this.getApi(store.apiUrl + 'technologies');
   },
 name: 'Projects',
 }
