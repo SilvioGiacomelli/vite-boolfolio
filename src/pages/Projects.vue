@@ -13,9 +13,7 @@ export default {
     return {
       store,
       loading:true,
-      projects: [],
-  technologies: [],
-  types: [],
+
     };
   },
   //Il methods serve per fare la chiamata all'api
@@ -48,9 +46,9 @@ export default {
 
   //il metodo mounted serve per fare in modo che la chiamata all'api venga fatta solo una volta
   mounted() {
-    this.getApi(store.apiUrl + 'projects');
-    this.getApi(store.apiUrl + 'types');
-    this.getApi(store.apiUrl + 'technologies');
+    this.getApi(store.apiUrl, 'projects');
+    this.getApi(store.apiUrl, 'types');
+    this.getApi(store.apiUrl, 'technologies');
   },
 name: 'Projects',
 }
