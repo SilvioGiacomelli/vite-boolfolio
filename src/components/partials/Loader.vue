@@ -11,6 +11,7 @@ export default {
     <span class="loader"></span>
   </div>
 </template>
+
 <style lang="scss" scoped>
 div{
   min-height: 100px;

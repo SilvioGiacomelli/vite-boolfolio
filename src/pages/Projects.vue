@@ -12,6 +12,7 @@ export default {
   data() {
     return {
       store,
+      //loading serve per far vedere il loader
       loading:true,
 
     };
@@ -57,7 +58,7 @@ name: 'Projects',
 <template>
 <Loader v-if="loading" />
 <div class="technologies_tab">
-  <span v-for="type in store.types" :key="`t-${type.id}`" class="badge bg-black">{{ type.title }}</span>
+  <span v-for="item in store.types" :key="`t-${item.id}`" class="badge bg-black">{{ item.title }}</span>
 </div>
 <div class="types_tab">
   <span v-for="technology in store.technologies" :key="`t-${technology.id}`" class="badge bg-warning text-black">{{ technology.title }}</span>

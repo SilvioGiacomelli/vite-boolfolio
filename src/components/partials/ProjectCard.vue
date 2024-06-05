@@ -4,7 +4,13 @@ export default {
   props: {
     project: {
       type: Object,
-    }
+    },
+    type: {
+      type: Object,
+    },
+    technology: {
+      type: Object,
+    },
   },
   methods: {
     getImageUrl(image) {
@@ -19,7 +25,9 @@ export default {
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">{{ project.title }}</h5>
-      <img v-for="(image, index) in project.images" :key="index" :src="getImageUrl(image)" :alt="`Image ${index + 1}`">
+      <p class="card-text">{{ project.description }}</p>
+      <a :href="project.url" class="btn btn-primary">Go to project</a>
+      <span v-for="technology in projectTechnologies" :key="`t-${technology.id}`" class="badge bg-black">{{ technology.title }}</span>
     </div>
   </div>
 
