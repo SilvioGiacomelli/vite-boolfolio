@@ -3,6 +3,7 @@ import Home from './pages/Home.vue';
 import Projects from './pages/Projects.vue';
 import Contacts from './pages/Contacts.vue';
 import About from './pages/About.vue';
+import ProjectDetail from './pages/ProjectDetail.vue';
 import Error404 from './pages/Error404.vue';
 
 const router = createRouter({
@@ -28,6 +29,11 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: About
+    },
+    {
+      path: '/project-detail/:slug',
+      name: 'projectDetail',
+      component: ProjectDetail
     },
     {
       path: '/:pathMatch(.*)*',
