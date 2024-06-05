@@ -33,6 +33,13 @@ methods:{
     })
   }
 },
+computed:{
+  type(){
+    if(!this.project.type){
+      return 'Type not found'
+    } return this.project.type.title;
+  }
+},
 mounted(){
   this.getApi();
 }
@@ -52,7 +59,8 @@ mounted(){
       </ul>
       <h4>Types</h4>
       <ul>
-        <li v-for="(type, index) in project.types" :key="index">{{ type.title }}</li>
+        <!-- <li v-for="(type, index) in project.types" :key="index">{{ type.title }}</li> -->
+        <li class="badge">{{ type }}</li>
       </ul>
       <img :src="project.image">
 
