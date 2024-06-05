@@ -14,7 +14,6 @@ export default {
       store,
       //loading serve per far vedere il loader
       loading:true,
-
     };
   },
   //Il methods serve per fare la chiamata all'api
@@ -50,6 +49,7 @@ export default {
     this.getApi(store.apiUrl, 'projects');
     this.getApi(store.apiUrl, 'types');
     this.getApi(store.apiUrl, 'technologies');
+    
   },
 name: 'Projects',
 }
