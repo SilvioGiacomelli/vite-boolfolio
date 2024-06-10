@@ -40,6 +40,7 @@ export default {
         });
     }
   },
+  // Computed properties are cached based on their dependencies. A computed property will only re-evaluate when some of its dependencies have changed.
   computed: {
     type() {
       if (!this.project.type) {
